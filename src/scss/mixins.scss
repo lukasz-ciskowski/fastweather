@@ -1,0 +1,12 @@
+@mixin mobile {
+  @media (max-width: 1000px) {
+    @content;
+  }
+}
+
+@mixin glassBox {
+  background-color: rgba(palette("primary"), 0.4);
+  backdrop-filter: blur(4px);
+  border-radius: 5px;
+  padding: space("md");
+}

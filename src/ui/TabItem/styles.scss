@@ -1,0 +1,12 @@
+.nav-item {
+  padding: space("sm");
+  transition: background-color 0.2s ease-in;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(palette("primary"), 0.5);
+  }
+
+  &__selected {
+    background-color: rgba(palette("primary"), 0.4);
+  }
+}

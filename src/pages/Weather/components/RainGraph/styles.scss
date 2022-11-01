@@ -1,0 +1,10 @@
+.rain {
+  @include glassBox;
+  h4 {
+    margin: 0;
+    margin-bottom: space("sm");
+    padding-bottom: space("xs");
+    text-align: center;
+    color: palette("secondary");
+  }
+}

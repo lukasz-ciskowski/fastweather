@@ -1,0 +1,71 @@
+.weather {
+  &__header {
+    @include glassBox;
+    border-radius: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding-inline: space("xl");
+    position: sticky;
+    inset: 0;
+
+    &__logo {
+      flex: 1;
+      vertical-align: middle;
+    }
+    &__search {
+      max-width: 400px;
+      width: 100%;
+    }
+
+    &::after {
+      flex: 1;
+      content: "";
+    }
+  }
+
+  &__background {
+    &::before {
+      position: fixed;
+      width: 100%;
+      inset: 0;
+      z-index: -1;
+      content: "";
+      background-image: url("/public/img/p3.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: scroll;
+      filter: brightness(80%);
+    }
+  }
+
+  &__content {
+    padding: space("xl") space("xxl");
+    display: grid;
+    grid-template-areas:
+      "weather weather weather"
+      "forecast forecast temp-map"
+      "info rain rain";
+
+    grid-auto-columns: 1fr;
+    grid-template-rows: 400px 400px 300px;
+    gap: space("xl");
+    margin: 0 auto;
+    max-width: 2000px;
+    > section {
+      overflow: hidden;
+    }
+
+    @include mobile {
+      grid-template-areas:
+        "weather"
+        "forecast"
+        "temp-map"
+        "info"
+        "rain";
+      grid-template-rows: 600px repeat(2, 400px) repeat(2, 300px);
+      padding-inline: space("lg");
+    }
+  }
+}

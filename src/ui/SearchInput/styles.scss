@@ -1,0 +1,26 @@
+.search-input {
+  background-color: palette("primary");
+  color: palette("secondary");
+  border-radius: 8px;
+  padding: space("xs") space("md");
+  cursor: text;
+
+  input {
+    border: none;
+    flex: 1;
+    background-color: transparent;
+    color: palette("secondary");
+    &:focus {
+      outline: none;
+    }
+    &::placeholder {
+      color: rgba(palette("secondary"), 0.6);
+    }
+  }
+
+  i {
+    font-size: font("small");
+    color: rgba(palette("secondary"), 0.6);
+    margin-right: space("xs");
+  }
+}

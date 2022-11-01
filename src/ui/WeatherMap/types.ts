@@ -1,0 +1,1 @@
+export type OpenWeatherMapTypes = "temp_new" | "wind_new" | "clouds_new"

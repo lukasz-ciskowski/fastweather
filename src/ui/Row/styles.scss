@@ -1,0 +1,13 @@
+.row {
+  display: flex;
+  gap: space("xs");
+  &__label {
+    width: 60%;
+    font-style: italic;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &__value {
+    width: 40%;
+  }
+}

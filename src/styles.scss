@@ -1,0 +1,29 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  font-size: font("normal");
+  color: palette("white");
+}
+
+#root {
+  height: 100vh;
+  width: 100%;
+}
+
+$images: "p1.jpg", "p2.jpg", "p3.jpg", "p4.jpg", "p5.jpg";
+
+.layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  margin: 0 auto;
+  max-width: 1400px;
+  padding: space("md");
+}
