@@ -34,6 +34,13 @@ export interface ForecastResponse {
   list: SingleForecastResult[];
 }
 
+export type GeocodingResponse = Array<{
+  name: string;
+  lat: number;
+  lon: number;
+  country: string;
+}>;
+
 export interface SingleForecastResult {
   dt: number;
   dt_txt: string;

@@ -10,3 +10,21 @@
   border-radius: 5px;
   padding: space("md");
 }
+
+@mixin keyframes($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin fadeIn($time: 0.5s) {
+  animation: fadeIn $time ease-out;
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}

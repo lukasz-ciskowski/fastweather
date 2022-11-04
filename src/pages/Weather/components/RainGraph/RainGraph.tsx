@@ -30,7 +30,7 @@ function RainGraph() {
             data={graphData}
             margin={{ left: 30, right: 30, bottom: 20 }}
           >
-            <XAxis dataKey="name" tick={{ fill: "#c9c9c9" }} interval={6} />
+            <XAxis dataKey="name" tick={{ fill: "#c9c9c9" }} />
             <YAxis
               type="number"
               dataKey="rain"

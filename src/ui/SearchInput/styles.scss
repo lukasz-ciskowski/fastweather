@@ -4,6 +4,8 @@
   border-radius: 8px;
   padding: space("xs") space("md");
   cursor: text;
+  display: flex;
+  align-items: center;
 
   input {
     border: none;

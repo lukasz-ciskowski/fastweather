@@ -1,4 +1,15 @@
 .weather {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(32, 32, 32);
+
+  section {
+    overflow: hidden;
+    z-index: 1;
+    @include fadeIn(0.7s);
+  }
+
   &__header {
     @include glassBox;
     border-radius: 0;
@@ -26,10 +37,10 @@
 
   &__background {
     &::before {
+      @include fadeIn;
       position: fixed;
       width: 100%;
       inset: 0;
-      z-index: -1;
       content: "";
       background-image: url("/public/img/p3.jpg");
       background-position: center;
@@ -37,6 +48,30 @@
       background-size: cover;
       background-attachment: scroll;
       filter: brightness(80%);
+    }
+  }
+
+  &__loading {
+    margin: 0 auto;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    @keyframes pulse {
+      0% {
+        opacity: 0.3;
+      }
+      50% {
+        opacity: 0.7;
+      }
+      100% {
+        opacity: 0.3;
+      }
+    }
+
+    i {
+      font-size: 60px;
+      color: palette("secondary");
+      animation: pulse 2s infinite;
     }
   }
 
@@ -49,13 +84,11 @@
       "info rain rain";
 
     grid-auto-columns: 1fr;
-    grid-template-rows: 400px 400px 300px;
+    grid-template-rows: 500px 400px 300px;
     gap: space("xl");
     margin: 0 auto;
+    width: 100%;
     max-width: 2000px;
-    > section {
-      overflow: hidden;
-    }
 
     @include mobile {
       grid-template-areas:
@@ -66,6 +99,24 @@
         "rain";
       grid-template-rows: 600px repeat(2, 400px) repeat(2, 300px);
       padding-inline: space("lg");
+    }
+  }
+
+  &__error {
+    max-width: 400px;
+    height: 100%;
+    margin: 0 auto;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    > section {
+      @include glassBox;
+      padding: space("xl") space("xxl");
+      text-align: center;
+      i {
+        font-size: 50px;
+        color: rgb(250, 173, 31);
+      }
     }
   }
 }

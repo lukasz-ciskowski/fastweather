@@ -23,6 +23,8 @@ function ForecastTabItem({ item, selected, onSelect }: Props) {
         <img
           src={`http://openweathermap.org/img/wn/${item?.weather[0].icon}.png`}
           alt="weather-icon"
+          width={50}
+          height={50}
         />
         <span>{withUnit(item.temp.toFixed(0), "temperature")}</span>
       </div>

@@ -1,4 +1,5 @@
 import { FormEvent, FormEventHandler, useId } from "react";
+import Loader from "ui/Loader/Loader";
 import "./styles.scss";
 
 interface Props
@@ -10,9 +11,10 @@ interface Props
     "onSubmit"
   > {
   onSubmit: (q: string) => void;
+  loading?: boolean;
 }
 
-function SearchInput({ onSubmit, ...rest }: Props) {
+function SearchInput({ onSubmit, loading, ...rest }: Props) {
   const id = useId();
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -35,6 +37,11 @@ function SearchInput({ onSubmit, ...rest }: Props) {
       <div className="search-input" onClick={handleClickWrapper}>
         <i className="fa-solid fa-magnifying-glass"></i>
         <input {...rest} autoComplete="off" id={id} name="search" />
+        {loading && (
+          <div className="search-input__loader">
+            <Loader />
+          </div>
+        )}
       </div>
     </form>
   );
