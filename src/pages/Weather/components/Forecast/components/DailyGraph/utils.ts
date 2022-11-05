@@ -1,4 +1,4 @@
-import { SingleForecastResult, WeatherResult } from "api/useWeather/types";
+import { SingleForecastResult } from "api/useWeather/types";
 import { DateTime } from "luxon";
 
 export function forecastsAsGraphRepresentsTemperature(

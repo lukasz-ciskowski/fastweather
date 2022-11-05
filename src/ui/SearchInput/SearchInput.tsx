@@ -1,4 +1,4 @@
-import { FormEvent, FormEventHandler, useId } from "react";
+import { FormEvent, useId } from "react";
 import Loader from "ui/Loader/Loader";
 import "./styles.scss";
 

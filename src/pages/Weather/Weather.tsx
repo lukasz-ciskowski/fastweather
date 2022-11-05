@@ -1,4 +1,3 @@
-import SearchInput from "ui/SearchInput/SearchInput";
 import CurrentWeather from "./components/CurrentWeather/CurrentWeather";
 import Forecast from "./components/Forecast/Forecast";
 import Header from "./components/Header/Header";
@@ -14,7 +13,10 @@ function Weather() {
   return (
     <div className="weather">
       {status === "ready" && <div className="weather__background" />}
-      <Header onSearch={onInsertCity} isLoading={citySearchStatus === "loading"} />
+      <Header
+        onSearch={onInsertCity}
+        isLoading={citySearchStatus === "loading"}
+      />
       {status === "loading" && (
         <div className="weather__loading">
           <i className="fa-solid fa-cloud-sun" />

@@ -6,7 +6,6 @@ const dotenv = require("dotenv");
 const { DefinePlugin } = require("webpack");
 
 module.exports = {
-  mode: "development",
   entry: "./src/index.tsx",
   devtool: "inline-source-map",
   output: {
@@ -14,13 +13,13 @@ module.exports = {
     filename: "bundle.js",
   },
   devtool: "inline-source-map",
-  devServer: {
-    static: "./dist",
-    historyApiFallback: true,
-  },
   module: {
     rules: [
-      { test: /\.(ts|js)x?$/, loader: "babel-loader", exclude: /node_modules/ },
+      {
+        test: /\.(ts|js)x?$/,
+        loader: "babel-loader",
+        exclude: /node_modules/,
+      },
       {
         test: /\.s[ac]ss?$/,
         use: [

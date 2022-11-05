@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { SingleForecastResult, WeatherResult } from "api/useWeather/types";
 import { ForecastForDaily } from "./types";
 import { DateTime } from "luxon";

@@ -1,5 +1,5 @@
 import create from "zustand";
-import { CurrentWeatherResponse, WeatherData } from "./types";
+import { WeatherData } from "./types";
 import {
   getCurrentWeather,
   getForecast,

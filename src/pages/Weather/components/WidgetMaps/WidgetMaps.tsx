@@ -8,19 +8,19 @@ import "./styles.scss";
 const MAP_TYPES: [OpenWeatherMapTypes, React.ReactNode][] = [
   [
     "temp_new",
-    <span>
+    <span key="temp-new">
       <i className="fa-solid fa-temperature-quarter"></i>Temperatura
     </span>,
   ],
   [
     "clouds_new",
-    <span>
+    <span key="clouds-new">
       <i className="fa-solid fa-cloud"></i>Zachmurzenie
     </span>,
   ],
   [
     "wind_new",
-    <span>
+    <span key="wind-new">
       <i className="fa-solid fa-wind"></i>Wiatr
     </span>,
   ],

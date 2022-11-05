@@ -1,4 +1,3 @@
-import { SingleForecastResult } from "api/useWeather/types";
 import { DateTime } from "luxon";
 import TabItem from "ui/TabItem/TabItem";
 import { withUnit } from "utils/units";
@@ -7,12 +6,12 @@ import "./styles.scss";
 
 interface Props {
   item: ForecastForDaily;
-  selected: boolean
-  onSelect: (day: number) => void
+  selected: boolean;
+  onSelect: (day: number) => void;
 }
 
 function ForecastTabItem({ item, selected, onSelect }: Props) {
-  const handleClick = () => onSelect(item.day)
+  const handleClick = () => onSelect(item.day);
 
   return (
     <TabItem selected={selected} onClick={handleClick}>

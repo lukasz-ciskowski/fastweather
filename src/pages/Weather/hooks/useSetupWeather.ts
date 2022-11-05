@@ -14,7 +14,7 @@ export function useSetupWeather() {
       Number(localStorage.getItem("user_lat")) || DEFAULT_POS.lat,
       Number(localStorage.getItem("user_lon")) || DEFAULT_POS.lon
     );
-  }, []);
+  }, [fetchWeather]);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -23,7 +23,7 @@ export function useSetupWeather() {
 
       fetchWeather(lat, long);
     });
-  }, []);
+  }, [fetchWeather]);
 
   const handleInsertCity = (cityQ: string) => fetchCityGeocoding(cityQ);
 

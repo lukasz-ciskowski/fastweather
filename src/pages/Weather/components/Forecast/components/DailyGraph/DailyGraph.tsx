@@ -3,7 +3,6 @@ import { useMemo } from "react";
 import {
   Area,
   AreaChart,
-  Label,
   ResponsiveContainer,
   Tooltip,
   XAxis,

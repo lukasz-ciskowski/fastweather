@@ -3,7 +3,6 @@ import { useMemo } from "react";
 import {
   Bar,
   BarChart,
-  Label,
   ResponsiveContainer,
   Tooltip,
   XAxis,
