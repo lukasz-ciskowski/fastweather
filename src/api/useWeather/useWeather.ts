@@ -50,9 +50,7 @@ export const useWeather = create<WeatherState>((set, get) => ({
       set({ citySearchStatus: "loading" });
 
       const [city] = await queryCityGeocoding(q);
-      if (!city) return;
-
-      get().fetchWeather(city.lat, city.lon);
+      if (city) get().fetchWeather(city.lat, city.lon);
     } catch (error) {
       set({ status: "error" });
     }
