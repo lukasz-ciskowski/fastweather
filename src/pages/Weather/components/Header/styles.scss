@@ -1,0 +1,50 @@
+.header {
+  @include glassBox;
+  border-radius: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding-inline: space("xl");
+  position: sticky;
+  inset: 0;
+  z-index: 2;
+  @include mobile {
+    padding-block: space("sm");
+    &:focus-within {
+      > div:first-child {
+        display: none;
+      }
+    }
+  }
+
+  &__logo {
+    flex: 1;
+    vertical-align: middle;
+  }
+  &__search {
+    max-width: 400px;
+    width: 100%;
+    @include mobile {
+      height: 100%;
+      max-width: 100%;
+      width: fit-content;
+      &:focus-within {
+        width: 100%;
+      }
+      input {
+        width: 0px;
+        &:focus {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &::after {
+    @include mobile {
+      display: none;
+    }
+    flex: 1;
+    content: "";
+  }
+}
