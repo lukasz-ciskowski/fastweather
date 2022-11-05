@@ -7,12 +7,19 @@
   text-shadow: 2px 2px #000000;
   padding: 0 space("xl");
 
+  @include mobile {
+    text-align: center;
+  }
+
   &__city {
     font-size: 2rem;
     line-height: 0.8;
   }
   &__main {
     font-size: 8rem;
+    @include mobile {
+      font-size: 6.5rem;
+    }
     font-weight: bold;
   }
   &__description {
@@ -20,6 +27,11 @@
     align-items: center;
     padding-top: space("md");
     margin-top: -30px;
+
+    @include mobile {
+      justify-content: center;
+    }
+
     span {
       &::first-letter {
         text-transform: uppercase;
@@ -30,11 +42,14 @@
 
   &__info {
     margin-top: space("md");
-    width: 400px;
+    max-width: 400px;
     border-top: 2px solid palette("white");
     padding-top: space("sm");
     display: flex;
     gap: space("xl");
+    @include mobile {
+      justify-content: center;
+    }
 
     &__readout {
       display: flex;

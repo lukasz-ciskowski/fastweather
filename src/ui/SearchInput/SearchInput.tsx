@@ -33,8 +33,8 @@ function SearchInput({ onSubmit, loading, ...rest }: Props) {
   const handleClickWrapper = () => document.getElementById(id)?.focus();
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="search-input" onClick={handleClickWrapper}>
+    <div className="search-input" onClick={handleClickWrapper}>
+      <form onSubmit={handleSubmit}>
         <i className="fa-solid fa-magnifying-glass"></i>
         <input {...rest} autoComplete="off" id={id} name="search" />
         {loading && (
@@ -42,8 +42,8 @@ function SearchInput({ onSubmit, loading, ...rest }: Props) {
             <Loader />
           </div>
         )}
-      </div>
-    </form>
+      </form>
+    </div>
   );
 }
 export default SearchInput;

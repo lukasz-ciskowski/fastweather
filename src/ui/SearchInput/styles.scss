@@ -2,14 +2,19 @@
   background-color: palette("primary");
   color: palette("secondary");
   border-radius: 8px;
-  padding: space("xs") space("md");
+  padding: space("xs") space("sm");
   cursor: text;
-  display: flex;
-  align-items: center;
-
+  height: 100%;
+  
+  form {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
   input {
     border: none;
     flex: 1;
+    padding: 0;
     background-color: transparent;
     color: palette("secondary");
     &:focus {
@@ -22,7 +27,8 @@
 
   i {
     font-size: font("small");
+    width: 30px;
+    text-align: center;
     color: rgba(palette("secondary"), 0.6);
-    margin-right: space("xs");
   }
 }
