@@ -5,6 +5,7 @@ import {
   getForecast,
   queryCityGeocoding,
 } from "./weatherApi";
+import { WeatherCache } from "./weatherCache";
 
 interface WeatherState {
   data: WeatherData | null;
@@ -28,8 +29,7 @@ export const useWeather = create<WeatherState>((set, get) => ({
       if (get().lat === lat && get().lon === lon) return;
 
       set({ status: "loading" });
-      localStorage.setItem("user_lat", lat.toString());
-      localStorage.setItem("user_lon", lon.toString());
+      WeatherCache.updateUserLocation(lat, lon)
 
       const [currentWeather, forecast] = await Promise.all([
         getCurrentWeather(lat, lon),

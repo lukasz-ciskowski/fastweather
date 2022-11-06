@@ -1,4 +1,5 @@
 import { useWeather } from "api/useWeather/useWeather";
+import { WeatherCache } from "api/useWeather/weatherCache";
 import { useEffect } from "react";
 
 const DEFAULT_POS = {
@@ -7,16 +8,19 @@ const DEFAULT_POS = {
 };
 
 export function useSetupWeather() {
-  const { fetchWeather, fetchCityGeocoding, citySearchStatus, status } = useWeather();
+  const { fetchWeather, fetchCityGeocoding, citySearchStatus, status } =
+    useWeather();
 
   useEffect(() => {
     fetchWeather(
-      Number(localStorage.getItem("user_lat")) || DEFAULT_POS.lat,
-      Number(localStorage.getItem("user_lon")) || DEFAULT_POS.lon
+      WeatherCache.lat || DEFAULT_POS.lat,
+      WeatherCache.lon || DEFAULT_POS.lon
     );
   }, [fetchWeather]);
 
   useEffect(() => {
+    if (WeatherCache.userLocation) return;
+
     navigator.geolocation.getCurrentPosition((position) => {
       const lat = position.coords.latitude;
       const long = position.coords.longitude;
@@ -30,6 +34,6 @@ export function useSetupWeather() {
   return {
     status,
     onInsertCity: handleInsertCity,
-    citySearchStatus
+    citySearchStatus,
   };
 }
