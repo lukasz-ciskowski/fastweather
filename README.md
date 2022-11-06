@@ -28,9 +28,10 @@ yarn / npm install
 
 ### Prepare environment
 
-In your local filesystem rename the `.env.example` to `.env` and insert your generated API key in OPEN_WEATHER_API_KEY key.
+In your local filesystem rename the `.env.example` to `.env` and insert your generated API key in `OPEN_WEATHER_API_KEY` key.
 
-The project was built on free version of openweather API, the only thing you need is to create an account and follow instruction steps to generate the key
+The project was built on free version of openweather API, the only thing you need is to create an account and follow instruction steps to generate the key.
+
 Follow this [link](https://openweathermap.org/api) to access the token
 
 ### Running
