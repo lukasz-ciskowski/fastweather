@@ -12,14 +12,13 @@ export function useSetupWeather() {
     useWeather();
 
   useEffect(() => {
-    fetchWeather(
-      WeatherCache.lat || DEFAULT_POS.lat,
-      WeatherCache.lon || DEFAULT_POS.lon
-    );
-  }, [fetchWeather]);
-
-  useEffect(() => {
-    if (WeatherCache.userLocation) return;
+    const userLocation = WeatherCache.userLocation;
+    if (userLocation) {
+      fetchWeather(userLocation.lat, userLocation.lon);
+      return;
+    } else {
+      fetchWeather(DEFAULT_POS.lat, DEFAULT_POS.lon, true);
+    }
 
     navigator.geolocation.getCurrentPosition((position) => {
       const lat = position.coords.latitude;

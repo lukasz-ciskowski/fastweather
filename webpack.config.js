@@ -7,12 +7,11 @@ const { DefinePlugin } = require("webpack");
 
 module.exports = {
   entry: "./src/index.tsx",
-  devtool: "inline-source-map",
   output: {
+    clean: true,
     path: path.join(__dirname, "/dist"),
-    filename: "bundle.js",
+    filename: "bundle.[hash].js",
   },
-  devtool: "inline-source-map",
   module: {
     rules: [
       {
@@ -24,7 +23,7 @@ module.exports = {
         test: /\.s[ac]ss?$/,
         use: [
           "style-loader",
-          "css-loader",
+          { loader: "css-loader", options: { url: false } },
           "sass-loader",
           {
             loader: "sass-resources-loader",

@@ -10,7 +10,7 @@ function Header({ onSearch, isLoading }: Props) {
   return (
     <header className="header">
       <div className="header__logo">
-        <img src="/public/img/logo.png" alt="logo" width={130} height={32} />
+        <img src="./public/img/logo.png" alt="logo" width={130} height={32} />
       </div>
       <div className="header__search">
         <SearchInput

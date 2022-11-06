@@ -1,7 +1,6 @@
 export class WeatherCache {
   static get userLocation() {
-    
-    if (this.lat == null || this.lon == null) return null
+    if (this.lat == null || this.lon == null) return null;
 
     return {
       lat: this.lat,
@@ -10,11 +9,16 @@ export class WeatherCache {
   }
 
   static get lat() {
-    return Number(localStorage.getItem("user_lat"));
+    const value = localStorage.getItem("user_lat");
+
+    if (value === null) return null;
+    return Number(value);
   }
 
   static get lon() {
-    return Number(localStorage.getItem("user_lon"));
+    const value = localStorage.getItem("user_lon");
+    if (value === null) return null;
+    return Number(value);
   }
 
   static updateUserLocation(lat: number, lon: number) {

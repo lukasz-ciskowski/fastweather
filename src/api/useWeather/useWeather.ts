@@ -13,7 +13,7 @@ interface WeatherState {
   lon: number | null;
   status: "loading" | "ready" | "error" | null;
   citySearchStatus: "loading" | null;
-  fetchWeather: (lat: number, long: number) => void;
+  fetchWeather: (lat: number, long: number, noKeepData?: boolean) => void;
   fetchCityGeocoding: (q: string) => void;
 }
 
@@ -23,13 +23,13 @@ export const useWeather = create<WeatherState>((set, get) => ({
   lon: null,
   status: null,
   citySearchStatus: null,
-  fetchWeather: async (lat: number, lon: number) => {
+  fetchWeather: async (lat: number, lon: number, noKeepData?: boolean) => {
     try {
       // if data is already there do not make any action
       if (get().lat === lat && get().lon === lon) return;
 
       set({ status: "loading" });
-      WeatherCache.updateUserLocation(lat, lon)
+      if (!noKeepData) WeatherCache.updateUserLocation(lat, lon);
 
       const [currentWeather, forecast] = await Promise.all([
         getCurrentWeather(lat, lon),

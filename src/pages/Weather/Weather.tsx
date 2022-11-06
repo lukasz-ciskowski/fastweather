@@ -17,7 +17,7 @@ function Weather() {
         onSearch={onInsertCity}
         isLoading={citySearchStatus === "loading"}
       />
-      {status === "loading" && (
+      {(status === "loading" || status === null) && (
         <div className="weather__loading">
           <i className="fa-solid fa-cloud-sun" />
         </div>
