@@ -7,30 +7,22 @@
   flex-direction: column;
   &__tabs {
     display: flex;
+    margin-bottom: space("xs");
+    display: flex;
     overflow-x: auto;
     overflow-y: hidden;
     &::-webkit-scrollbar {
       display: none;
-      scroll-padding: 0;
     }
-    margin-bottom: space("xs");
+
     > div {
       padding-bottom: space("md");
     }
-    span i {
-      margin-right: space("xs");
-    }
-  }
-}
-.nav-item {
-  @include mobile {
-    overflow: hidden;
-    span {
-      display: block;
-      width: 100%;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+    &__item {
+      display: inline-flex;
+      i {
+        margin-right: space("xs");
+      }
     }
   }
 }
