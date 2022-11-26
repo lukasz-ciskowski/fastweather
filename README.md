@@ -4,7 +4,8 @@ FastWeather is an application built with React for university project.
 
 As many weather apps its main purpose is to check the current weather forecast.
 
-[link to demo](https://lukasz-ciskowski.github.io/fastweather)
+![screen](./docs/img/c1.PNG) 
+If you would like to test it here is [link to demo](https://lukasz-ciskowski.github.io/fastweather)
 
 ## Requirements
 
